@@ -319,6 +319,30 @@ class User extends Controller
 
         return $response[$data];
     }
+    
+        public function renewSupportPin($userid, $token = null)
+    {
+        if(is_null($token)){
+            $token = Helper::generateRandomString(5,'1234567890');
+        }
+
+        $SQL = self::db()->prepare("UPDATE `users` SET `s_pin` = :s_pin WHERE `id` = :id");
+        $SQL->execute(array(":id" => $userid, ":s_pin" => $token));
+
+        return $token;
+    }
+
+    public function validateSpin($s_pin)
+    {
+        $SQL = self::db()->prepare('SELECT * FROM `users` WHERE `s_pin` = :s_pin');
+        $SQL->execute(array(":s_pin" => $s_pin,));
+        if ($SQL->rowCount() == 1) {
+            $userData = $SQL -> fetch(PDO::FETCH_ASSOC);
+            return $userData['id'];
+        } else {
+            return 0;
+        }
+    }
 
     public function logLogin($user_id, $user_addr, $user_agent)
     {
