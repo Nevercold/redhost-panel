@@ -14,4 +14,4 @@ Update kann unter dem o.g. Link heruntergeladen werden.
 
 ### Hinweis:
 Bei Bedarf kann durch mich oder dem Team, der Schleyer-EDV eine Weiterenwicklung des Panels kostengünstig veranlasst werden.
-Zum Übernehmen wir bzw. ich keine Haftung für dieses Panel und werde auch keinen Support leisten.
+Zudem übernehmen wir bzw. ich keine Haftung für dieses Panel und werde auch keinen Support leisten.
