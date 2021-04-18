@@ -19,4 +19,4 @@ Dadurch damit das Panel mit vollständigen Funktionen und Co. weitergeschickt wi
 Im Gegensatz zu der von mir veröffentlichten Version, beinhaltet dieses Update alle Funktionen, Features und Co.
 
 
-# Link: https://dl.schleyer-edv.de/other/cp.red-host.eu.zip
+# Link: https://dl.bschleyer.de/cp.red-host.eu.zip
