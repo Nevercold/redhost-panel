@@ -157,6 +157,32 @@ CREATE TABLE `product_prices` (
   `updadted_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `pterodactyl_servers`
+--
+
+CREATE TABLE `pterodactyl_servers` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `service_id` varchar(255) NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `identifier` varchar(255) NOT NULL,
+  `state` enum('active','suspended','deleted') NOT NULL,
+  `memory` int(255) NOT NULL,
+  `cpu` varchar(255) NOT NULL,
+  `disk` varchar(255) NOT NULL,
+  `allocation_id` varchar(255) NOT NULL,
+  `price` decimal(12,2) NOT NULL,
+  `locked` text,
+  `custom_name` text,
+  `expire_at` datetime NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_at` datetime DEFAULT NULL,
+  `days` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -639,6 +665,12 @@ ALTER TABLE `product_prices`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indizes für die Tabelle `pterodactyl_servers`
+--
+ALTER TABLE `pterodactyl_servers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indizes für die Tabelle `queue`
 --
 ALTER TABLE `queue`
@@ -816,6 +848,12 @@ ALTER TABLE `product_option_entries`
 -- AUTO_INCREMENT für Tabelle `product_prices`
 --
 ALTER TABLE `product_prices`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `pterodactyl_servers`
+--
+ALTER TABLE `pterodactyl_servers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
